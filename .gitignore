@@ -1,0 +1,20 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules
+
+# Build outputs
+.build
+dist
+.next
+
+# Uploads / media
+uploads
+
+# Misc
+*.js.map
+.DS_Store
+Thumbs.db
