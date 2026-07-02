@@ -1,0 +1,8 @@
+[phases.install]
+cmds = []
+
+[phases.build]
+cmds = ["npm ci --prefix .medusa/server --omit=dev"]
+
+[start]
+cmd = "npx medusa start"
