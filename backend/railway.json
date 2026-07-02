@@ -5,7 +5,7 @@
     "buildCommand": "npm ci --prefix .medusa/server --omit=dev"
   },
   "deploy": {
-    "startCommand": "npx medusa start",
+    "startCommand": "cd .medusa/server && node_modules/.bin/medusa start",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 3
   }
