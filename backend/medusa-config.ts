@@ -18,6 +18,9 @@ module.exports = defineConfig({
   },
   modules: [
     {
+      resolve: "./src/modules/announcement-bar",
+    },
+    {
       resolve: "@medusajs/file-local",
       options: {
         upload_dir: "uploads",

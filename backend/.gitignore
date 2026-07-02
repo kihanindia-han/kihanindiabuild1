@@ -1,6 +1,7 @@
 .env
 node_modules
 .build
+.medusa
 uploads
 dist
 *.js.map
