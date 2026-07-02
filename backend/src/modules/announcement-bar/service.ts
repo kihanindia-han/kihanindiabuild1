@@ -32,7 +32,7 @@ class AnnouncementBarModuleService extends MedusaService({
   AnnouncementBar,
 }) {
   async getConfig(): Promise<AnnouncementBarConfig> {
-    const records = await this.listAnnouncementBars({}, { take: 1 })
+    const records = await (this as any).listAnnouncementBars({}, { take: 1 })
     if (records.length === 0) {
       return DEFAULT_CONFIG
     }
@@ -47,9 +47,10 @@ class AnnouncementBarModuleService extends MedusaService({
   }
 
   async saveConfig(config: AnnouncementBarConfig): Promise<AnnouncementBarConfig> {
-    const records = await this.listAnnouncementBars({}, { take: 1 })
+    const svc = this as any
+    const records = await svc.listAnnouncementBars({}, { take: 1 })
     if (records.length === 0) {
-      await this.createAnnouncementBars({
+      await svc.createAnnouncementBars({
         messages: config.messages,
         rotation_speed: config.rotation_speed,
         background_color: config.background_color,
@@ -57,7 +58,7 @@ class AnnouncementBarModuleService extends MedusaService({
         font_family: config.font_family,
       })
     } else {
-      await this.updateAnnouncementBars(
+      await svc.updateAnnouncementBars(
         { id: records[0].id },
         {
           messages: config.messages,
