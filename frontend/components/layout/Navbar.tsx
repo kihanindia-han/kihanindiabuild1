@@ -28,12 +28,12 @@ export default function Navbar() {
       className="w-full transition-colors duration-300"
       style={{
         background: opaque ? "var(--color-cream)" : "transparent",
-        height: "60px",
+        height: "68px",
         borderBottom: opaque ? "1px solid var(--color-blush)" : "none",
       }}
     >
       <div
-        className="max-w-screen-xl mx-auto px-8 md:px-12 flex items-center justify-between h-full relative"
+        className="max-w-screen-xl mx-auto px-10 md:px-16 flex items-center justify-between h-full relative"
       >
 
         {/* Left — Menu button */}
@@ -102,7 +102,7 @@ export default function Navbar() {
           borderBottom: menuOpen ? "1px solid var(--color-blush)" : "none",
         }}
       >
-        <nav className="max-w-screen-xl mx-auto px-8 md:px-12 py-10 flex flex-col gap-6">
+        <nav className="max-w-screen-xl mx-auto px-10 md:px-16 py-10 flex flex-col gap-6">
           {navLinks.map((item) => (
             <Link
               key={item.href}
