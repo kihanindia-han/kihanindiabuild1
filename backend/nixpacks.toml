@@ -1,0 +1,13 @@
+[phases.install]
+cmds = []
+
+[phases.build]
+cmds = [
+  "npm install",
+  "npm run build",
+  "mkdir -p public",
+  "cp -r .medusa/server/public/admin public/"
+]
+
+[start]
+cmd = "node_modules/.bin/medusa db:migrate && node_modules/.bin/medusa start"
