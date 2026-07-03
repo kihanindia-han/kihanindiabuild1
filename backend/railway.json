@@ -2,7 +2,7 @@
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
     "builder": "RAILPACK",
-    "buildCommand": "npm install --include=dev && npm run build && mkdir -p public && cp -r .medusa/server/public/admin public/"
+    "buildCommand": "npm run build && mkdir -p public && cp -r .medusa/server/public/admin public/"
   },
   "deploy": {
     "startCommand": "node_modules/.bin/medusa db:migrate && node_modules/.bin/medusa start",
