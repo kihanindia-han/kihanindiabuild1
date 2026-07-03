@@ -1,6 +1,7 @@
 .env
 node_modules
-.medusa/types
+.medusa
+public/admin
 uploads
 dist
 *.js.map
