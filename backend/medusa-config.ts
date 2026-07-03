@@ -8,8 +8,6 @@ const required = (name: string): string => {
   return val
 }
 
-const backendUrl = process.env.BACKEND_URL || "http://localhost:9000"
-
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: required("DATABASE_URL"),
@@ -21,16 +19,4 @@ module.exports = defineConfig({
       cookieSecret: required("COOKIE_SECRET"),
     },
   },
-  admin: {
-    backendUrl,
-  },
-  modules: [
-    {
-      resolve: "@medusajs/file-local",
-      options: {
-        upload_dir: "uploads",
-        backend_url: backendUrl,
-      },
-    },
-  ],
 })
