@@ -17,8 +17,10 @@
   },
   "ts-node": {
     "transpileOnly": true,
-    "moduleResolution": "node",
-    "module": "commonjs"
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "node"
+    }
   },
   "include": ["src", "medusa-config.ts"],
   "exclude": ["node_modules", ".build"]
