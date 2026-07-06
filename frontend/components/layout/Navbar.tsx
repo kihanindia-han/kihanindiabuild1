@@ -33,7 +33,7 @@ export default function Navbar() {
       }}
     >
       <div
-        className="max-w-screen-xl mx-auto px-10 md:px-16 flex items-center justify-between h-full relative"
+        className="w-full px-8 md:px-14 flex items-center justify-between h-full relative"
       >
 
         {/* Left — Menu button */}
@@ -102,7 +102,7 @@ export default function Navbar() {
           borderBottom: menuOpen ? "1px solid var(--color-blush)" : "none",
         }}
       >
-        <nav className="max-w-screen-xl mx-auto px-10 md:px-16 py-10 flex flex-col gap-6">
+        <nav className="w-full px-8 md:px-14 py-10 flex flex-col gap-6">
           {navLinks.map((item) => (
             <Link
               key={item.href}
