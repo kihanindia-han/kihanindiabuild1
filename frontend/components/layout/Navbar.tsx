@@ -27,6 +27,9 @@ export default function Navbar() {
     <header
       className="w-full transition-colors duration-300"
       style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
         background: opaque ? "var(--color-cream)" : "transparent",
         height: "68px",
         borderBottom: opaque ? "1px solid var(--color-blush)" : "none",
