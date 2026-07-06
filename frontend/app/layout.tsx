@@ -29,6 +29,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/TanPearl.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="flex flex-col min-h-screen" style={{ fontFamily: "var(--font-jost), sans-serif" }}>
         <AnnouncementBar />
         <Navbar />
