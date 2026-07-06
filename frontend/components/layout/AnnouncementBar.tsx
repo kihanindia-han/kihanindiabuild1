@@ -25,7 +25,7 @@ const FALLBACK: Config = {
     { id: "3", text: "HANDCRAFTED IN INDIA" },
   ],
   rotation_speed: 3500,
-  background_color: "#1C1C1C",
+  background_color: "#000000",
   text_color: "#FAF9F6",
   font_family: "Jost",
 }
