@@ -24,7 +24,7 @@ const posts = [
 export default function JournalTeaser() {
   return (
     <section style={{ background: "var(--color-mist)" }}>
-      <div className="max-w-screen-xl mx-auto py-20 md:py-28" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
+      <div className="w-full py-20 md:py-28" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
 
         {/* Header */}
         <div className="flex items-end justify-between mb-14">

@@ -20,7 +20,7 @@ const campaigns = [
 export default function CampaignBlocks() {
   return (
     <section className="w-full" style={{ background: "var(--color-cream)" }}>
-      <div className="max-w-screen-xl mx-auto py-20 md:py-28" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
+      <div className="w-full py-20 md:py-28" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
 
         <p
           className="text-xs tracking-widest uppercase mb-14"
