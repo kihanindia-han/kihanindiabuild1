@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="flex flex-col min-h-screen" style={{ fontFamily: "var(--font-jost), sans-serif" }}>
         <AnnouncementBar />
-        <div className="fixed top-0 left-0 w-full z-50">
+        <div className="fixed top-10 left-0 w-full z-50">
           <Navbar />
         </div>
         <main className="flex-1">{children}</main>
