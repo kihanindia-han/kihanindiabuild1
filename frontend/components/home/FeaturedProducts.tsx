@@ -10,7 +10,7 @@ const placeholderProducts = [
 export default function FeaturedProducts() {
   return (
     <section style={{ background: "var(--color-cream)" }}>
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-20 md:py-28">
+      <div className="max-w-screen-xl mx-auto py-20 md:py-28" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
 
         {/* Header */}
         <div className="flex items-end justify-between mb-14">

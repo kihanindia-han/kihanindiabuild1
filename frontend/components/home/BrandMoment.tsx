@@ -1,7 +1,8 @@
 export default function BrandMoment() {
   return (
     <section
-      className="w-full py-28 md:py-40 px-6 md:px-16 flex flex-col md:flex-row items-end justify-between gap-12"
+      className="w-full py-28 md:py-40 flex flex-col md:flex-row items-end justify-between gap-12"
+      style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}
       style={{ background: "var(--color-mist)" }}
     >
       {/* Large quote */}

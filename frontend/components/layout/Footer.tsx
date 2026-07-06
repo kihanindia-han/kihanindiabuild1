@@ -23,7 +23,7 @@ const links = {
 export default function Footer() {
   return (
     <footer style={{ background: "var(--color-ink)", color: "var(--color-cream)" }}>
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-16 md:py-20">
+      <div className="max-w-screen-xl mx-auto py-16 md:py-20" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
 
         {/* Top — wordmark + tagline */}
         <div className="mb-16 md:mb-20">
