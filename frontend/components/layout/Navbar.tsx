@@ -10,6 +10,18 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ]
 
+const navItemStyle = (fg: string) => ({
+  fontFamily: "var(--font-jost)",
+  fontSize: "11px",
+  fontWeight: 400,
+  letterSpacing: "0.18em",
+  color: fg,
+  textDecoration: "none",
+  paddingBottom: "2px",
+  borderBottom: "1px solid transparent",
+  transition: "border-color 0.2s ease",
+})
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -39,8 +51,7 @@ export default function Navbar() {
         className="w-full flex items-center justify-between h-full relative"
         style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}
       >
-
-        {/* Left — Menu button */}
+        {/* Left — MENU (mobile) or MENU text (desktop) */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex items-center gap-2.5 transition-colors duration-300"
@@ -50,12 +61,19 @@ export default function Navbar() {
             fontWeight: 400,
             letterSpacing: "0.18em",
             color: fg,
+            paddingBottom: "2px",
+            borderBottom: "1px solid transparent",
           }}
+          onMouseEnter={e => (e.currentTarget.style.borderBottomColor = fg)}
+          onMouseLeave={e => (e.currentTarget.style.borderBottomColor = "transparent")}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >
           {menuOpen ? "CLOSE" : "MENU"}
-          <MenuIcon open={menuOpen} />
+          {/* Hamburger icon only on mobile */}
+          <span className="md:hidden">
+            <MenuIcon open={menuOpen} />
+          </span>
         </button>
 
         {/* Center — Wordmark */}
@@ -75,12 +93,13 @@ export default function Navbar() {
           Kihan
         </Link>
 
-        {/* Right — Account + Cart */}
+        {/* Right — icons on mobile, text on desktop */}
         <div className="flex items-center gap-5">
+          {/* Mobile: icons */}
           <Link
             href="/account"
             aria-label="Account"
-            className="transition-colors duration-300"
+            className="md:hidden transition-colors duration-300"
             style={{ color: fg }}
           >
             <AccountIcon />
@@ -88,10 +107,30 @@ export default function Navbar() {
           <Link
             href="/cart"
             aria-label="Cart"
-            className="transition-colors duration-300"
+            className="md:hidden transition-colors duration-300"
             style={{ color: fg }}
           >
             <CartIcon />
+          </Link>
+
+          {/* Desktop: text labels */}
+          <Link
+            href="/account"
+            className="hidden md:inline-block transition-colors duration-300"
+            style={navItemStyle(fg)}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderBottomColor = fg)}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderBottomColor = "transparent")}
+          >
+            LOGIN
+          </Link>
+          <Link
+            href="/cart"
+            className="hidden md:inline-block transition-colors duration-300"
+            style={navItemStyle(fg)}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderBottomColor = fg)}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderBottomColor = "transparent")}
+          >
+            CART
           </Link>
         </div>
       </div>
