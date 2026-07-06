@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "600px" }}>
+    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "600px", marginTop: "-100px" }}>
 
       {/* Placeholder — swap with real image */}
       <div
@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute inset-0" style={{ background: "rgba(28,28,28,0.18)" }} />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end pb-16 md:pb-20" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)", paddingTop: "68px" }}>
+      <div className="absolute inset-0 flex flex-col justify-end pb-16 md:pb-20" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
         <p
           className="text-xs tracking-widest uppercase mb-6 md:mb-8"
           style={{ fontFamily: "var(--font-jost)", color: "var(--color-cream)", letterSpacing: "0.2em", opacity: 0.85 }}

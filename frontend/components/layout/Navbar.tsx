@@ -20,27 +20,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const [atTop, setAtTop] = useState(true)
-
-  useEffect(() => {
-    const checkTop = () => setAtTop(window.scrollY < 40)
-    checkTop()
-    window.addEventListener("scroll", checkTop, { passive: true })
-    return () => window.removeEventListener("scroll", checkTop)
-  }, [])
-
   const opaque = menuOpen || scrolled
   const fg = opaque ? "var(--color-ink)" : "var(--color-cream)"
 
   return (
     <header
-      className="w-full transition-all duration-300"
+      className="w-full transition-colors duration-300"
       style={{
-        position: "fixed",
-        top: atTop ? "40px" : "0px",
-        left: 0,
-        right: 0,
-        zIndex: 50,
         background: opaque ? "var(--color-cream)" : "transparent",
         height: "68px",
         borderBottom: opaque ? "1px solid var(--color-blush)" : "none",
