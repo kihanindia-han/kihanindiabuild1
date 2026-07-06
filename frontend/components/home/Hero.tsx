@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "600px", marginTop: "-100px" }}>
+    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "600px", marginTop: "-68px" }}>
 
       {/* Placeholder — swap with real image */}
       <div
