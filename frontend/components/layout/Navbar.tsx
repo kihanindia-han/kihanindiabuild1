@@ -33,7 +33,8 @@ export default function Navbar() {
       }}
     >
       <div
-        className="w-full px-8 md:px-14 flex items-center justify-between h-full relative"
+        className="w-full flex items-center justify-between h-full relative"
+        style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}
       >
 
         {/* Left — Menu button */}
@@ -102,7 +103,7 @@ export default function Navbar() {
           borderBottom: menuOpen ? "1px solid var(--color-blush)" : "none",
         }}
       >
-        <nav className="w-full px-8 md:px-14 py-10 flex flex-col gap-6">
+        <nav className="w-full py-10 flex flex-col gap-6" style={{ paddingLeft: "clamp(24px, 4vw, 56px)", paddingRight: "clamp(24px, 4vw, 56px)" }}>
           {navLinks.map((item) => (
             <Link
               key={item.href}
