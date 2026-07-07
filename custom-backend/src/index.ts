@@ -9,7 +9,7 @@ const app = Fastify({ logger: true })
 
 // ─── Plugins ─────────────────────────────────────────────
 app.register(cors, {
-  origin: (origin, cb) => cb(null, true),
+  origin: true,
   credentials: true,
 })
 
