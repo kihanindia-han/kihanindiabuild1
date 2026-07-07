@@ -19,7 +19,7 @@ export default function NewProductPage() {
   })
 
   const [variants, setVariants] = useState([
-    { title: "Default", sku: "", price: "", compareAtPrice: "", inventory: "0" },
+    { title: "Default", sku: "", price: "", compareAtPrice: "", stock: "0" },
   ])
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function NewProductPage() {
           sku: v.sku || null,
           price: Math.round(parseFloat(v.price) * 100) || 0,
           compareAtPrice: v.compareAtPrice ? Math.round(parseFloat(v.compareAtPrice) * 100) : null,
-          inventory: parseInt(v.inventory) || 0,
+          stock: parseInt(v.stock) || 0,
         })),
       })
       router.push("/products")
@@ -207,11 +207,11 @@ export default function NewProductPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-stone-500 mb-1">Inventory</label>
+                  <label className="block text-xs text-stone-500 mb-1">Stock</label>
                   <input
                     type="number"
                     value={v.inventory}
-                    onChange={(e) => updateVariant(i, "inventory", e.target.value)}
+                    onChange={(e) => updateVariant(i, "stock", e.target.value)}
                     min="0"
                     className="w-full border border-stone-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-stone-500"
                   />
