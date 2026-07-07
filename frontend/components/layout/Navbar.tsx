@@ -84,7 +84,7 @@ export default function Navbar() {
             fontFamily: "var(--font-tan-pearl)",
             fontWeight: 400,
             fontSize: "1.35rem",
-            letterSpacing: "0.38em",
+            letterSpacing: "normal",
             color: fg,
             textTransform: "uppercase",
             whiteSpace: "nowrap",
