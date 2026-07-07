@@ -9,10 +9,7 @@ const app = Fastify({ logger: true })
 
 // ─── Plugins ─────────────────────────────────────────────
 app.register(cors, {
-  origin: [
-    process.env.STORE_URL || "http://localhost:3000",
-    process.env.ADMIN_URL || "http://localhost:3001",
-  ],
+  origin: (origin, cb) => cb(null, true),
   credentials: true,
 })
 
@@ -23,6 +20,7 @@ app.register(jwt, {
 // ─── Routes ──────────────────────────────────────────────
 app.register(import("./routes/store/products"), { prefix: "/store" })
 app.register(import("./routes/admin/products"), { prefix: "/admin" })
+app.register(import("./routes/admin/collections"), { prefix: "/admin" })
 app.register(import("./routes/admin/auth"), { prefix: "/admin" })
 
 // ─── Health ──────────────────────────────────────────────
