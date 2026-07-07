@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://kihanindiabuild1-production-8666.up.railway.app"
+const BASE_URL = "https://kihanindiabuild1-production-8666.up.railway.app"
 
 function getToken() {
   return typeof window !== "undefined" ? localStorage.getItem("kihan_admin_token") : null
