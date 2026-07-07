@@ -96,11 +96,43 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Center — Newsletter */}
+        {/* Center — Wordmark */}
+        <div style={{
+          ...panelBase,
+          background: "linear-gradient(160deg, #2A2520 0%, #1C1C1C 100%)",
+          borderRight: "1px solid rgba(255,255,255,0.06)",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
+            <p style={{
+              fontFamily: "var(--font-tan-pearl)",
+              fontWeight: 400,
+              fontSize: "clamp(2.5rem, 5vw, 5rem)",
+              letterSpacing: "0.38em",
+              color: "var(--color-cream)",
+              textTransform: "uppercase",
+              lineHeight: 1,
+            }}>
+              Kihan
+            </p>
+            <p style={{
+              fontFamily: "var(--font-jost)",
+              fontSize: "11px",
+              letterSpacing: "0.22em",
+              color: "var(--color-stone)",
+              textTransform: "uppercase",
+            }}>
+              Handmade Essentials
+            </p>
+          </div>
+        </div>
+
+        {/* Right — Stay Connected */}
         <div style={{
           ...panelBase,
           background: "linear-gradient(160deg, var(--color-stone) 0%, #8C7A68 100%)",
-          borderRight: "1px solid rgba(255,255,255,0.06)",
         }}>
           <p style={{ fontFamily: "var(--font-jost)", fontSize: "11px", letterSpacing: "0.18em", color: "rgba(28,28,28,0.6)", textTransform: "uppercase" }}>
             Stay Connected
@@ -169,51 +201,6 @@ export default function Footer() {
                 </button>
               </form>
             )}
-          </div>
-        </div>
-
-        {/* Right — New Arrivals */}
-        <div style={{
-          ...panelBase,
-          background: "linear-gradient(160deg, #3A3530 0%, #1C1C1C 100%)",
-        }}>
-          <p style={{ fontFamily: "var(--font-jost)", fontSize: "11px", letterSpacing: "0.18em", color: "var(--color-stone)", textTransform: "uppercase" }}>
-            New Arrivals
-          </p>
-
-          <div>
-            <h2 style={{
-              fontFamily: "var(--font-cormorant)",
-              fontWeight: 300,
-              fontStyle: "italic",
-              fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-              lineHeight: 1.1,
-              color: "var(--color-cream)",
-              marginBottom: "2rem",
-              maxWidth: "12ch",
-            }}>
-              Things worth keeping.
-            </h2>
-            <Link
-              href="/collections"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                fontFamily: "var(--font-jost)",
-                fontSize: "11px",
-                letterSpacing: "0.18em",
-                color: "var(--color-cream)",
-                textTransform: "uppercase",
-                border: "1px solid rgba(255,255,255,0.3)",
-                padding: "10px 20px",
-                transition: "border-color 0.2s ease",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)")}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)")}
-            >
-              → Shop Now
-            </Link>
           </div>
         </div>
       </div>
