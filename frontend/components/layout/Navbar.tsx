@@ -83,7 +83,7 @@ export default function Navbar() {
           style={{
             fontFamily: "var(--font-tan-pearl)",
             fontWeight: 400,
-            fontSize: "1.35rem",
+            fontSize: "1.6rem",
             letterSpacing: "normal",
             color: fg,
             textTransform: "uppercase",
