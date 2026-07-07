@@ -19,9 +19,11 @@ app.register(jwt, {
 
 // ─── Routes ──────────────────────────────────────────────
 app.register(import("./routes/store/products"), { prefix: "/store" })
+app.register(import("./routes/admin/auth"), { prefix: "/admin" })
 app.register(import("./routes/admin/products"), { prefix: "/admin" })
 app.register(import("./routes/admin/collections"), { prefix: "/admin" })
-app.register(import("./routes/admin/auth"), { prefix: "/admin" })
+app.register(import("./routes/admin/orders"), { prefix: "/admin" })
+app.register(import("./routes/admin/customers"), { prefix: "/admin" })
 
 // ─── Health ──────────────────────────────────────────────
 app.get("/health", async () => ({ status: "ok" }))

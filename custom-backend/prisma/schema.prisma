@@ -37,29 +37,40 @@ model Customer {
 // ─── Catalog ────────────────────────────────────────────
 
 model Collection {
-  id        String    @id @default(cuid())
-  title     String
-  handle    String    @unique
-  image     String?
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  products  Product[]
+  id          String    @id @default(cuid())
+  title       String
+  handle      String    @unique
+  description String?
+  thumbnail   String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
 
   @@map("collections")
 }
 
 model Product {
-  id           String        @id @default(cuid())
-  title        String
-  handle       String        @unique
-  description  String?
-  status       ProductStatus @default(DRAFT)
-  collectionId String?
-  collection   Collection?   @relation(fields: [collectionId], references: [id])
-  images       ProductImage[]
-  variants     ProductVariant[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id             String           @id @default(cuid())
+  title          String
+  handle         String           @unique
+  description    String?
+  status         ProductStatus    @default(DRAFT)
+  thumbnail      String?
+  tags           String[]         @default([])
+  productType    String?
+  weight         Int?
+  length         Int?
+  width          Int?
+  height         Int?
+  seoTitle       String?
+  seoDescription String?
+  collectionId   String?
+  collection     Collection?      @relation(fields: [collectionId], references: [id])
+  images         ProductImage[]
+  variants       ProductVariant[]
+  options        ProductOption[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
 
   @@map("products")
 }
@@ -75,17 +86,41 @@ model ProductImage {
   @@map("product_images")
 }
 
-model ProductVariant {
-  id        String     @id @default(cuid())
+model ProductOption {
+  id        String               @id @default(cuid())
   title     String
-  sku       String?    @unique
-  price           Int  // in paise (smallest INR unit)
-  compareAtPrice  Int?
-  stock           Int  @default(0)
   productId String
-  product   Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
-  cartItems CartItem[]
-  orderItems OrderItem[]
+  product   Product              @relation(fields: [productId], references: [id], onDelete: Cascade)
+  values    ProductOptionValue[]
+  createdAt DateTime             @default(now())
+
+  @@map("product_options")
+}
+
+model ProductOptionValue {
+  id       String          @id @default(cuid())
+  value    String
+  optionId String
+  option   ProductOption   @relation(fields: [optionId], references: [id], onDelete: Cascade)
+  variants ProductVariant[]
+
+  @@map("product_option_values")
+}
+
+model ProductVariant {
+  id             String               @id @default(cuid())
+  title          String
+  sku            String?              @unique
+  barcode        String?
+  price          Int                  // in paise
+  compareAtPrice Int?
+  stock          Int                  @default(0)
+  weight         Int?
+  productId      String
+  product        Product              @relation(fields: [productId], references: [id], onDelete: Cascade)
+  optionValues   ProductOptionValue[]
+  cartItems      CartItem[]
+  orderItems     OrderItem[]
 
   @@map("product_variants")
 }
@@ -122,19 +157,19 @@ model CartItem {
 // ─── Orders ──────────────────────────────────────────────
 
 model Order {
-  id              String      @id @default(cuid())
-  customerId      String?
-  customer        Customer?   @relation(fields: [customerId], references: [id])
-  email           String
-  status          OrderStatus @default(PENDING)
-  paymentStatus   PaymentStatus @default(PENDING)
-  total           Int         // in paise
-  items           OrderItem[]
-  shippingAddress Json?
-  razorpayOrderId String?
+  id                String        @id @default(cuid())
+  customerId        String?
+  customer          Customer?     @relation(fields: [customerId], references: [id])
+  email             String
+  status            OrderStatus   @default(PENDING)
+  paymentStatus     PaymentStatus @default(PENDING)
+  total             Int           // in paise
+  items             OrderItem[]
+  shippingAddress   Json?
+  razorpayOrderId   String?
   razorpayPaymentId String?
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
 
   @@map("orders")
 }
