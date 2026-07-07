@@ -96,39 +96,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Center — Wordmark */}
-        <div style={{
-          ...panelBase,
-          background: "linear-gradient(160deg, #2A2520 0%, #1C1C1C 100%)",
-          borderRight: "1px solid rgba(255,255,255,0.06)",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
-            <p style={{
-              fontFamily: "var(--font-tan-pearl)",
-              fontWeight: 400,
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
-              letterSpacing: "0.38em",
-              color: "var(--color-cream)",
-              textTransform: "uppercase",
-              lineHeight: 1,
-            }}>
-              Kihan
-            </p>
-            <p style={{
-              fontFamily: "var(--font-jost)",
-              fontSize: "11px",
-              letterSpacing: "0.22em",
-              color: "var(--color-stone)",
-              textTransform: "uppercase",
-            }}>
-              Handmade Essentials
-            </p>
-          </div>
-        </div>
-
         {/* Right — Stay Connected */}
         <div style={{
           ...panelBase,
